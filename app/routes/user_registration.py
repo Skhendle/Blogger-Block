@@ -10,7 +10,12 @@ class RegisterUserModel(BaseModel):
     age: str
     gender: str
 
-
+class PostUserModel(BaseModel):
+    user_id: int
+    heading: str
+    body: str
+    
+    
 router = APIRouter()
 
 

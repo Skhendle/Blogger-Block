@@ -51,6 +51,11 @@ $ GraphQL_System : deactivate
 
 ## **Layered package Architecture**
 ![Layed package description diagram](/images/Architecture.png)
+
+## **Layered package Architecture**
+![Layed package description diagram](/images/Relationships.png)
+
+
 ### <br>*Register User | API* {
 <blockquote>
 [x] __API__ -  
