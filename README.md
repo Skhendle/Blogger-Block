@@ -1,10 +1,42 @@
 # GraphQL_System
 This is a backend package that plans to build an API server, that is backed by SQLAlchemeny, Redis and graphene. The authentication will be done through MySQL
 
+
+
+## **How to stat-up the app** <br>
+```python
+"MINGW64 - bash terminal"
+Run  command in directory you will be coding.
+$ : git clone https://github.com/Skhendle/GraphQL_System.git
+$ : cd GraphQL_System
+ 
+To create virtual environment.
+$ GraphQL_System : python -m venv env 
+
+To activate virtual environment
+$ GraphQL_System : source ".\env\Scripts\activate"
+
+To install the requirements run
+$ GraphQL_System : cd app
+$ GraphQL_System\app : pip  install -r requirements.txt
+$ GraphQL_System\app : cd ..
+
+To update requirements.txt after installing new package
+$ GraphQL_System : cd app
+$ GraphQL_System\app : pip freeze > requirements.txt
+$ GraphQL_System\app : cd ..
+
+To run the application use the following command
+$ GraphQL_System : uvicorn app.main:app --reload
+
+To deactivate virtual enviroment
+$ GraphQL_System : deactivate
+```
+
 ## </br> API Routes Documentation Format
 * Describes the documenation structure for routes, how they are accessed, parameters they use and their responses.</br>
 
-Package Name | Layer {
+### **Package Name | Layer** {
 <blockquote>
 [x] __API__ - *Provides the URL of the API, states whether it is a POST, GET, DELETE or UPDATE method, provides the library used to build/support page.*</br>
 
@@ -54,11 +86,11 @@ Package Name | Layer {
 {"URL" : "###",  "method": "Insert to db", "library": "sqlalchemy"}
 ``` 
 
-[x] __Input__ - *
+[x] __Input__ -
 ```python
 {"username":"###", "password":"###", "age":"###", "gender":"###"}
 ```
-*.</br>
+.</br>
 
 [x] __Class__ - 
 ```python
