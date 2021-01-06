@@ -55,7 +55,7 @@ $ GraphQL_System : deactivate
 ## **Relationships Model**
 ![Layed package description diagram](/images/Relationships.png)
 
-## **Layered package Architecture**
+## **Class Diagrams**
 ![Layed package description diagram](/images/ClassDiagram.png)
 
 ### <br>*Register User | API* {
