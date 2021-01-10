@@ -1,24 +1,10 @@
-import json
-from pydantic import BaseModel
 from fastapi import APIRouter, Depends
-from ..dependencies import get_token_header
+from app.data_models.validator_models.user import UserRegistrationModel
+from app.services.user_registration import UserRegistration    
 
-
-class RegisterUserModel(BaseModel):
-    name: str
-    password: str
-    age: str
-    gender: str
-
-class PostUserModel(BaseModel):
-    user_id: int
-    heading: str
-    body: str
-    
-    
 router = APIRouter()
 
 
 @router.post("/user/register", tags=["user"])
-async def register_api(user: RegisterUserModel):
-    return {"A":"a","B":"b"}
+async def register_api(user: UserRegistrationModel):
+    return UserRegistration(user).register_user()

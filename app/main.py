@@ -9,12 +9,12 @@ app = FastAPI(dependencies=[Depends(get_query_token)])
 app.include_router(user_login.router)
 app.include_router(user_registration.router)
 
-logging.basicConfig(filename='server.log', encoding='utf-8', level=logging.DEBUG)
+# logging.basicConfig(filename='server.log', encoding='utf-8', level=logging.DEBUG)
 
 
 @app.get("/")
 async def root():
-    return {"message": "Hello Bigger Applications!"}
+    return {"message": "Hello Welcome To"}
 
 """
     To create virtual environment $: python -m venv env

@@ -1,5 +1,7 @@
-# GraphQL_System
+# **GraphQL_System**
 This is a backend package that plans to build an API server, that is backed by SQLAlchemeny, Redis and graphene. The authentication will be done through MySQL
+
+
 
 
 
@@ -33,10 +35,15 @@ To deactivate virtual enviroment
 $ GraphQL_System : deactivate
 ```
 
-## </br> API Routes Documentation Format
+## **Accessing the API's** <br>
+- {server url}/docs
+- {server url}/redoc
+
+
+## </br> **API Routes Documentation Format**
 * Describes the documenation structure for routes, how they are accessed, parameters they use and their responses.</br>
 
-### **Package Name | Layer** {
+### **Package Name | Layer** 
 <blockquote>
 [x] __API__ - *Provides the URL of the API, states whether it is a POST, GET, DELETE or UPDATE method, provides the library used to build/support page.*</br>
 
@@ -46,7 +53,7 @@ $ GraphQL_System : deactivate
 
 [x] __Output__ - *Feedback from server, depends on __Input__*</br>
 </blockquote>
-}
+
 
 
 ## **Layered package Architecture**
