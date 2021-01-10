@@ -7,6 +7,7 @@ This is a backend package that plans to build an API server, that is backed by S
 
 ## **How to stat-up the app** <br>
 ```python
+# Python version: 3.9.0
 "MINGW64 - bash terminal"
 Run  command in directory you will be coding.
 $ : git clone https://github.com/Skhendle/GraphQL_System.git
