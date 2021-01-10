@@ -27,6 +27,7 @@ class UserRegistration:
             session.commit()
             return json.dumps({"user_id":user.id ,"message":"Successful user registration"})
         except Exception as error:
+            session.rollback()
             # Used to handle the registration of a user that is already in the database
             # print(error)
             return json.dumps({"message":"Invalid user registration"})
