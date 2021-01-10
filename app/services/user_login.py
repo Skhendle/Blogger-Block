@@ -4,7 +4,7 @@ from app.data_models.database_models import session
 from app.data_models.validator_models.user import UserLoginModel
 
 from app.data_models.database_models.user import User
-from app.data_models.database_models.post import Post
+
 
 class UserLogin:
 
@@ -24,8 +24,8 @@ class UserLogin:
                     username = self.__inputs.username,
                     password = self.__inputs.password
                 ).one()
-            print(user)
+            # print(user)
             return user
         except Exception as error:
-            print(error)
+            # print(error)
             return json.dumps({"message":"Invalid user login - "})

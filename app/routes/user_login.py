@@ -5,6 +5,6 @@ from app.services.user_login import UserLogin
 router = APIRouter()
 
 
-@router.post("/user/login", tags=["user"])
+@router.get("/user/login", tags=["user"])
 async def login_api(user: UserLoginModel):
     return UserLogin(user).user_login()

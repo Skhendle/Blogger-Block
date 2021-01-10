@@ -4,7 +4,7 @@ from app.data_models.database_models import session
 from app.data_models.validator_models.user import UserLoginModel, UserRegistrationModel
 
 from app.data_models.database_models.user import User
-from app.data_models.database_models.post import Post
+
 
 class UserRegistration:
 
