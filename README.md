@@ -134,6 +134,44 @@ $ GraphQL_System : deactivate
 [x] __Output__ - *Feedback can be viewed in __Service__ class*</br>
 </blockquote>
 
+### <br>*[ 3 ]. Create Post | API* 
+<blockquote>
+[x] __API__ -  
+
+```python
+{
+    "route name": "create_user_api()",
+    "method": "POST", 
+    "library": ["fastApi", "app.data_models.validator_models.post","app.services.create_post"], 
+    "file path":"app.routes.create_post.py"
+}
+``` 
+
+[x] __Input__ - 
+```python
+{
+    "class name": "CreateUserModel()",
+    "library": ["pydantic","typing"], 
+    "file path": "app.data_models.validator_models.post.py", 
+}
+```
+*.</br>
+
+[x] __Service__ - 
+```python
+{
+    "Class name": "CreateUser()",
+    "packages": ["app.data_models.databse_models.post", 
+        "app.data_models.validator_models.post"],
+    "file path": "app.services.create_post.py"
+}
+
+```
+<br>
+
+[x] __Output__ - *Feedback can be viewed in __Service__ class*</br>
+</blockquote>
+
 
 ## **Relationships Model**
 ![Layed package description diagram](/images/Relationships.png)
@@ -154,6 +192,34 @@ $ GraphQL_System : deactivate
 [x] __Input__ -
 ```python
 {"username":"###", "password":"###", "age":"###", "gender":"###"}
+```
+.</br>
+
+[x] __Class__ - 
+```python
+
+# Class name: RegisterUserModel(sqlalchemy)
+# file location: app/authentication/register_user.py
+
+```
+<br>
+
+[x] __Output__ - *Feedback from server, depends on __Input__*</br>
+</blockquote>
+}
+
+
+### <br>*Create Post | Validate* {
+<blockquote>
+[x] __API__ -  
+
+```python
+{"URL" : "###",  "method": "Insert to db", "library": "sqlalchemy"}
+``` 
+
+[x] __Input__ -
+```python
+{"user_id":"###", "heading":"###", "body":"###"}
 ```
 .</br>
 

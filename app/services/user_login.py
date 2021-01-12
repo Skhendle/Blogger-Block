@@ -27,6 +27,5 @@ class UserLogin:
             # print(user)
             return user
         except Exception as error:
-            session.rollback()
             # print(error)
-            return json.dumps({"message":"Invalid user login"})
+            return json.dumps({"message":"Invalid user login - "})
