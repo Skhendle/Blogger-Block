@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.9.0"
+install:
+  - pip install -r requirements.txt
+script:
+  - python -m venv env
+  - source ".\env\Scripts\activate"
+  - coverage run -m pytest 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
