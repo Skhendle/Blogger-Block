@@ -8,7 +8,7 @@ This is a backend package that plans to build an API server, that is backed by S
 
 
 
-## **How to stat-up the app** <br>
+## **How to start-up the app** <br>
 ```python
 # Python version: 3.9.0
 "MINGW64 - bash terminal"
