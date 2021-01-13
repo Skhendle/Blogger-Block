@@ -22,7 +22,7 @@ def test_user_registration_pass():
 
     assert response.status_code == 200
     assert response.json() == json.dumps(
-        {"user_id": 1, "message": "Successful user registration"}
+        {"user_id": 2, "message": "Successful user registration"}
     )
 
 
@@ -57,7 +57,7 @@ def test_user_login_pass():
     # print(response.json())
 
     assert response.status_code == 200
-    assert response.json() == {'gender': 'male', 'password': 'pass123', 'id': 1, 'age': 15, 'username': 'test_user'}
+    assert response.json() == {'gender': 'male', 'password': 'pass123', 'id': 2, 'age': 15, 'username': 'test_user'}
 
 
 # Tesing the login function
@@ -91,45 +91,3 @@ def test_user_login_fail1():
 
     assert response.status_code == 200
     assert response.json() == json.dumps({"message":"Invalid user login"})
-
-
-######################################################################################
-#                      tests for posts                                               #
-#                                                                                    #
-######################################################################################
-
-#this Successfully creates a post
-
-def test_create_post():
-    response = client.post(
-        "/create/post",
-        json={
-            "user_id": 1,
-            "heading": "the test heading",
-            "body": "the Successful test"
-
-        }
-    )
-
-    assert response.status_code == 200
-    assert response.json() == json.dumps(
-        {"post_id":1 , "heading": "the test heading","body": "the Successful test",}
-    )
-
-
-
-#the test should due to inernal server error as user_id=0 doesnt exist
-def test_wont_create_post():
-    response = client.post(
-        "/create/post",
-        json={
-            "user_id": 100,
-            "heading": "the test heading",
-            "body": "the Successful test"
-
-        }
-    )
-
-    assert response.status_code == 200
-    assert response.json() == json.dumps({
-    "message":"user does not exist"})
