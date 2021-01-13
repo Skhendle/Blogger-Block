@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Skhendle/GraphQL_System.svg?branch=main)](https://travis-ci.org/Skhendle/GraphQL_System)
+[![codecov](https://codecov.io/gh/Skhendle/GraphQL_System/branch/main/graph/badge.svg?token=rSx7WWHUb9)](https://codecov.io/gh/Skhendle/GraphQL_System)
+<br>
 # **GraphQL_System**
 This is a backend package that plans to build an API server, that is backed by SQLAlchemeny, Redis and graphene. The authentication will be done through MySQL
 
