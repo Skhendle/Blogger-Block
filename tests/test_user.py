@@ -38,10 +38,10 @@ def test_user_registration_fail():
             "gender": "male"
         }
     )
-    
+
     assert response.status_code == 200
     assert response.json() == json.dumps({"message": "Invalid user registration"})
-    
+
 
 # Tesing the login function
 # valid inputs
@@ -53,9 +53,9 @@ def test_user_login_pass():
             "password": "pass123",
         }
     )
-    
+
     # print(response.json())
-    
+
     assert response.status_code == 200
     assert response.json() == {'gender': 'male', 'password': 'pass123', 'id': 1, 'age': 15, 'username': 'test_user'}
 
@@ -70,9 +70,9 @@ def test_user_login_fail0():
             "password": "pass123",
         }
     )
-    
+
     # print(response.json())
-    
+
     assert response.status_code == 200
     assert response.json() == json.dumps({"message":"Invalid user login"})
 
@@ -86,8 +86,50 @@ def test_user_login_fail1():
             "password": "pass",
         }
     )
-    
+
     # print(response.json())
-    
+
     assert response.status_code == 200
     assert response.json() == json.dumps({"message":"Invalid user login"})
+
+
+######################################################################################
+#                      tests for posts                                               #
+#                                                                                    #
+######################################################################################
+
+#this Successfully creates a post
+
+def test_create_post():
+    response = client.post(
+        "/create/post",
+        json={
+            "user_id": 1,
+            "heading": "the test heading",
+            "body": "the Successful test"
+
+        }
+    )
+
+    assert response.status_code == 200
+    assert response.json() == json.dumps(
+        {"post_id":1 , "heading": "the test heading","body": "the Successful test",}
+    )
+
+
+
+#the test should due to inernal server error as user_id=0 doesnt exist
+def test_wont_create_post():
+    response = client.post(
+        "/create/post",
+        json={
+            "user_id": 100,
+            "heading": "the test heading",
+            "body": "the Successful test"
+
+        }
+    )
+
+    assert response.status_code == 200
+    assert response.json() == json.dumps({
+    "message":"user does not exist"})
