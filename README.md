@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Skhendle/GraphQL_System.svg?branch=main)](https://travis-ci.org/Skhendle/GraphQL_System)
+[![codecov](https://codecov.io/gh/Skhendle/GraphQL_System/branch/main/graph/badge.svg?token=rSx7WWHUb9)](https://codecov.io/gh/Skhendle/GraphQL_System)
+<br>
 # **GraphQL_System**
 This is a backend package that plans to build an API server, that is backed by SQLAlchemeny, Redis and graphene. The authentication will be done through MySQL
 
@@ -5,7 +8,7 @@ This is a backend package that plans to build an API server, that is backed by S
 
 
 
-## **How to stat-up the app** <br>
+## **How to start-up the app** <br>
 ```python
 # Python version: 3.9.0
 "MINGW64 - bash terminal"
@@ -208,30 +211,3 @@ $ GraphQL_System : deactivate
 </blockquote>
 }
 
-
-### <br>*Create Post | Validate* {
-<blockquote>
-[x] __API__ -  
-
-```python
-{"URL" : "###",  "method": "Insert to db", "library": "sqlalchemy"}
-``` 
-
-[x] __Input__ -
-```python
-{"user_id":"###", "heading":"###", "body":"###"}
-```
-.</br>
-
-[x] __Class__ - 
-```python
-
-# Class name: RegisterUserModel(sqlalchemy)
-# file location: app/authentication/register_user.py
-
-```
-<br>
-
-[x] __Output__ - *Feedback from server, depends on __Input__*</br>
-</blockquote>
-}
