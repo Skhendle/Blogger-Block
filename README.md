@@ -8,16 +8,16 @@ This is a backend package that plans to build an API server, that is backed by S
 
 
 
-## **How to start-up the app** <br>
+## **How to stat-up the app** <br>
 ```python
 # Python version: 3.9.0
 "MINGW64 - bash terminal"
 Run  command in directory you will be coding.
 $ : git clone https://github.com/Skhendle/GraphQL_System.git
 $ : cd GraphQL_System
- 
+
 To create virtual environment.
-$ GraphQL_System : python -m venv env 
+$ GraphQL_System : python -m venv env
 
 To activate virtual environment
 $ GraphQL_System : source ".\env\Scripts\activate"
@@ -47,7 +47,7 @@ $ GraphQL_System : deactivate
 ## </br> **API Routes Documentation Format**
 * Describes the documenation structure for routes, how they are accessed, parameters they use and their responses.</br>
 
-### **Package Layer Name | Layer** 
+### **Package Layer Name | Layer**
 <blockquote>
 [x] __API__ - *Provides the URL of the API, states whether it is a POST, GET, DELETE or UPDATE method, provides the library used to build/support page.*</br>
 
@@ -61,34 +61,34 @@ $ GraphQL_System : deactivate
 ## **Layered package Architecture**
 ![Layed package description diagram](/images/Architecture.png)
 
-### <br>*[ 1 ]. Register User | API* 
+### <br>*[ 1 ]. Register User | API*
 <blockquote>
 [x] __API__ -  
 
 ```python
 {
     "route name": "register_api()",
-    "method": "Post", 
-    "library": ["fastApi", "app.data_models.validator_models.user"], 
+    "method": "Post",
+    "library": ["fastApi", "app.data_models.validator_models.user"],
     "file path":"app.routes.register_user.py"
 }
-``` 
+```
 
-[x] __Input__ - 
+[x] __Input__ -
 ```python
 {
     "class name": "UserRegistrationModel()",
-    "library": ["pydantic","typing"], 
-    "file path": "app.data_models.validator_models.user.py", 
+    "library": ["pydantic","typing"],
+    "file path": "app.data_models.validator_models.user.py",
 }
 ```
 *.</br>
 
-[x] __Service__ - 
+[x] __Service__ -
 ```python
 {
     "Class name": "RegisterUser()",
-    "packages": ["app.data_models.databse_models", 
+    "packages": ["app.data_models.databse_models",
         "app.data_models.validator_models"],
     "file path": "app.services.user_registration.py"
 }
@@ -99,36 +99,74 @@ $ GraphQL_System : deactivate
 [x] __Output__ - *Feedback can be viewed in __Service__ class*</br>
 </blockquote>
 
-### <br>*[ 2 ]. Login User | API* 
+### <br>*[ 2 ]. Login User | API*
 <blockquote>
 [x] __API__ -  
 
 ```python
 {
     "route name": "login_api()",
-    "method": "Get", 
-    "library": ["fastApi", "app.data_models.validator_models.user"], 
+    "method": "Get",
+    "library": ["fastApi", "app.data_models.validator_models.user"],
     "file path":"app.routes.register_user.py"
 }
-``` 
+```
 
-[x] __Input__ - 
+[x] __Input__ -
 ```python
 {
     "class name": "UserLoginnModel()",
-    "library": ["pydantic","typing"], 
-    "file path": "app.data_models.validator_models.user.py", 
+    "library": ["pydantic","typing"],
+    "file path": "app.data_models.validator_models.user.py",
 }
 ```
 *.</br>
 
-[x] __Service__ - 
+[x] __Service__ -
 ```python
 {
     "Class name": "UserLogin()",
-    "packages": ["app.data_models.databse_models", 
+    "packages": ["app.data_models.databse_models",
         "app.data_models.validator_models"],
     "file path": "app.services.user_login.py"
+}
+
+```
+<br>
+
+[x] __Output__ - *Feedback can be viewed in __Service__ class*</br>
+</blockquote>
+
+### <br>*[ 3 ]. Create Post | API*
+<blockquote>
+[x] __API__ -  
+
+```python
+{
+    "route name": "create_user_api()",
+    "method": "POST",
+    "library": ["fastApi", "app.data_models.validator_models.post","app.services.create_post"],
+    "file path":"app.routes.create_post.py"
+}
+```
+
+[x] __Input__ -
+```python
+{
+    "class name": "CreateUserModel()",
+    "library": ["pydantic","typing"],
+    "file path": "app.data_models.validator_models.post.py",
+}
+```
+*.</br>
+
+[x] __Service__ -
+```python
+{
+    "Class name": "CreateUser()",
+    "packages": ["app.data_models.databse_models.post",
+        "app.data_models.validator_models.post"],
+    "file path": "app.services.create_post.py"
 }
 
 ```
@@ -152,7 +190,7 @@ $ GraphQL_System : deactivate
 
 ```python
 {"URL" : "###",  "method": "Insert to db", "library": "sqlalchemy"}
-``` 
+```
 
 [x] __Input__ -
 ```python
@@ -160,7 +198,35 @@ $ GraphQL_System : deactivate
 ```
 .</br>
 
-[x] __Class__ - 
+[x] __Class__ -
+```python
+
+# Class name: RegisterUserModel(sqlalchemy)
+# file location: app/authentication/register_user.py
+
+```
+<br>
+
+[x] __Output__ - *Feedback from server, depends on __Input__*</br>
+</blockquote>
+}
+
+
+### <br>*Create Post | Validate* {
+<blockquote>
+[x] __API__ -  
+
+```python
+{"URL" : "###",  "method": "Insert to db", "library": "sqlalchemy"}
+```
+
+[x] __Input__ -
+```python
+{"user_id":"###", "heading":"###", "body":"###"}
+```
+.</br>
+
+[x] __Class__ -
 ```python
 
 # Class name: RegisterUserModel(sqlalchemy)

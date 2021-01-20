@@ -22,7 +22,7 @@ def test_user_registration_pass():
 
     assert response.status_code == 200
     assert response.json() == json.dumps(
-        {"user_id": 1, "message": "Successful user registration"}
+        {"user_id": 2, "message": "Successful user registration"}
     )
 
 
@@ -38,10 +38,10 @@ def test_user_registration_fail():
             "gender": "male"
         }
     )
-    
+
     assert response.status_code == 200
     assert response.json() == json.dumps({"message": "Invalid user registration"})
-    
+
 
 # Tesing the login function
 # valid inputs
@@ -53,11 +53,11 @@ def test_user_login_pass():
             "password": "pass123",
         }
     )
-    
+
     # print(response.json())
-    
+
     assert response.status_code == 200
-    assert response.json() == {'gender': 'male', 'password': 'pass123', 'id': 1, 'age': 15, 'username': 'test_user'}
+    assert response.json() == {'gender': 'male', 'password': 'pass123', 'id': 2, 'age': 15, 'username': 'test_user'}
 
 
 # Tesing the login function
@@ -70,9 +70,9 @@ def test_user_login_fail0():
             "password": "pass123",
         }
     )
-    
+
     # print(response.json())
-    
+
     assert response.status_code == 200
     assert response.json() == json.dumps({"message":"Invalid user login"})
 
@@ -86,8 +86,8 @@ def test_user_login_fail1():
             "password": "pass",
         }
     )
-    
+
     # print(response.json())
-    
+
     assert response.status_code == 200
     assert response.json() == json.dumps({"message":"Invalid user login"})
