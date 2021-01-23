@@ -54,10 +54,16 @@ def test_user_login_pass():
         }
     )
 
-    # print(response.json())
+    print(response.json())
 
     assert response.status_code == 200
-    assert response.json() == {'gender': 'male', 'password': 'pass123', 'id': 2, 'age': 15, 'username': 'test_user'}
+    assert response.json() == {
+        'id': 2, 
+        'name': 'test_user', 
+        'age': '15', 
+        'gender': 'male', 
+        'posts': [], 
+        'friends': []}
 
 
 # Tesing the login function

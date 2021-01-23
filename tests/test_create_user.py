@@ -5,8 +5,8 @@ def test_user_registration_pass1():
     response = client.post(
         "/user/register",
         json={
-            "username": "test_user1",
-            "password": "pass123",
+            "username": "P",
+            "password": "string",
             "age": 15,
             "gender": "male"
         }
