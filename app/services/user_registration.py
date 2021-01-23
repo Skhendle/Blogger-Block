@@ -16,7 +16,7 @@ class UserRegistration:
     def register_user(self):
 
         user = User(
-                username=self.__inputs.username, 
+                name=self.__inputs.username, 
                 password=self.__inputs.password, 
                 age=self.__inputs.age, 
                 gender=self.__inputs.gender

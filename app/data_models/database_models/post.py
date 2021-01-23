@@ -14,9 +14,6 @@ class Post(Base):
 	body= Column(String(200))
 	date = Column(DateTime(), default=datetime.now)
 
-	# link a post to a user
-	# relationship is a one to many : one user many post,
-	user = relationship("User", backref=backref('posts', order_by=id))
 
 	def __repr__(self):
 		return f"Post('{self.heading}','{self.body}')"

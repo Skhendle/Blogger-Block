@@ -9,12 +9,13 @@ Base = declarative_base()
 
 from app.data_models.database_models.user import User
 from app.data_models.database_models.post import Post
+from app.data_models.database_models.requests import Requests
 
 # We are using ORM from sqlalchemy so that we 
 # can have a better representation of our relationships
 
 
-engine = create_engine('sqlite:///:memory:', echo=False)
+engine = create_engine('sqlite:///data.db', echo=False)
 # engine = create_engine('sqlite:///test_db.db', echo=False)
 
 Base.metadata.create_all(bind=engine)
