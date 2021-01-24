@@ -26,7 +26,7 @@ class UserLogin:
                     name = self.__inputs.username,
                     password = self.__inputs.password
                 ).first()
-            # print(type(user))
+            
             response = {}
             response['id'] = user.id
             response['name'] = user.name 

@@ -14,7 +14,7 @@ def test_user_login_pass():
     response = client.post(
         "/user/login",
         json={
-            "username": "Peter",
+            "username": "Antony",
             "password": "string",
         }
     )
