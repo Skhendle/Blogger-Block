@@ -17,8 +17,6 @@ class FriendRequest:
         self.__request = request
 
     def create_friendship(self):
-        print(self.__request.by_id)
-        print(self.__request.for_id)
 
         if self.__check_if_relationship_exist() == True:
 
@@ -33,9 +31,9 @@ class FriendRequest:
                 return "friendship successfully created"
             except Exception as error:
                 session.rollback()
-                return "frieend request failed"
+                return "friend request failed"
 
-        return "frieend request failed"
+        return "friend request failed"
 
     def __check_if_relationship_exist(self):
 
