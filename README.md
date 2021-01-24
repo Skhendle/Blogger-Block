@@ -79,7 +79,8 @@ $ GraphQL_System : deactivate
     "file path": "app.data_models.validator_models.user.py",
 }
 ```
-*.</br>
+
+</br>
 
 [x] __Service__ -
 ```python
@@ -117,7 +118,8 @@ $ GraphQL_System : deactivate
     "file path": "app.data_models.validator_models.user.py",
 }
 ```
-*.</br>
+
+</br>
 
 [x] __Service__ -
 ```python
@@ -155,7 +157,8 @@ $ GraphQL_System : deactivate
     "file path": "app.data_models.validator_models.post.py",
 }
 ```
-*.</br>
+
+</br>
 
 [x] __Service__ -
 ```python
