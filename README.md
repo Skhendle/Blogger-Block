@@ -2,13 +2,10 @@
 [![codecov](https://codecov.io/gh/Skhendle/GraphQL_System/branch/main/graph/badge.svg?token=rSx7WWHUb9)](https://codecov.io/gh/Skhendle/GraphQL_System)
 <br>
 # **GraphQL_System**
-This is a backend package that plans to build an API server, that is backed by SQLAlchemeny, Redis and graphene. The authentication will be done through MySQL
+This is a backend system that plans to build an API server for  a user blogging platfrom. It will be built with SQLAlchemeny, SQLlite, Redis and graphene. It will have three layers. The storage layer that contains all the system data, service layer that will allow us to implement the system requirements logic and API  layer that will allow external programs to  commincate with the system.
 
 
-
-
-
-## **How to stat-up the app** <br>
+## **How To Start She APP** <br>
 ```python
 # Python version: 3.9.0
 "MINGW64 - bash terminal"
@@ -23,14 +20,10 @@ To activate virtual environment
 $ GraphQL_System : source ".\env\Scripts\activate"
 
 To install the requirements run
-$ GraphQL_System : cd app
-$ GraphQL_System\app : pip  install -r requirements.txt
-$ GraphQL_System\app : cd ..
+$ GraphQL_System : pip  install -r requirements.txt
 
 To update requirements.txt after installing new package
-$ GraphQL_System : cd app
 $ GraphQL_System\app : pip freeze > requirements.txt
-$ GraphQL_System\app : cd ..
 
 To run the application use the following command
 $ GraphQL_System : uvicorn app.main:app --reload
@@ -39,21 +32,25 @@ To deactivate virtual enviroment
 $ GraphQL_System : deactivate
 ```
 
-## **Accessing the API's** <br>
+## **Accessing API DOCUMENTATION** <br>
 - {server url}/docs
 - {server url}/redoc
 
 
 ## </br> **API Routes Documentation Format**
-* Describes the documenation structure for routes, how they are accessed, parameters they use and their responses.</br>
+* Describes the documenation structure for routes, how they are accessed, parameters they use, service packages used and the response.</br>
 
 ### **Package Layer Name | Layer**
 <blockquote>
-[x] __API__ - *Provides the URL of the API, states whether it is a POST, GET, DELETE or UPDATE method, provides the library used to build/support page.*</br>
 
-[x] __Input__ - *Describes the parameters of the __API__*.</br>
+[x] __API__ - *Provides the URL of the API, states whether it is a POST, GET, DELETE or UPDATE method, provides the library used to build/support page.*
+</br>
 
-[x] __Service__ - *Specifies the name of the class used by the route and the location of the file containing the route.*<br>
+[x] __Input__ - *Describes the parameters of the __API__.*
+</br>
+
+[x] __Services__ - *Specifies the name of the class used by the route and the location of the file containing the route.*
+</br>
 
 [x] __Output__ - *Feedback from server, depends on __Input__*</br>
 </blockquote>
@@ -125,10 +122,10 @@ $ GraphQL_System : deactivate
 [x] __Service__ -
 ```python
 {
-    "Class name": "UserLogin()",
+    "Class name": "UserLogin(), UserFriends()",
     "packages": ["app.data_models.databse_models",
         "app.data_models.validator_models"],
-    "file path": "app.services.user_login.py"
+    "file path": ["app.services.user_login.py", "app.services.get_friends.py"]
 }
 
 ```
@@ -184,57 +181,4 @@ $ GraphQL_System : deactivate
 
 
 
-### <br>*Register User | Authenticate* {
-<blockquote>
-[x] __API__ -  
 
-```python
-{"URL" : "###",  "method": "Insert to db", "library": "sqlalchemy"}
-```
-
-[x] __Input__ -
-```python
-{"username":"###", "password":"###", "age":"###", "gender":"###"}
-```
-.</br>
-
-[x] __Class__ -
-```python
-
-# Class name: RegisterUserModel(sqlalchemy)
-# file location: app/authentication/register_user.py
-
-```
-<br>
-
-[x] __Output__ - *Feedback from server, depends on __Input__*</br>
-</blockquote>
-}
-
-
-### <br>*Create Post | Validate* {
-<blockquote>
-[x] __API__ -  
-
-```python
-{"URL" : "###",  "method": "Insert to db", "library": "sqlalchemy"}
-```
-
-[x] __Input__ -
-```python
-{"user_id":"###", "heading":"###", "body":"###"}
-```
-.</br>
-
-[x] __Class__ -
-```python
-
-# Class name: RegisterUserModel(sqlalchemy)
-# file location: app/authentication/register_user.py
-
-```
-<br>
-
-[x] __Output__ - *Feedback from server, depends on __Input__*</br>
-</blockquote>
-}
