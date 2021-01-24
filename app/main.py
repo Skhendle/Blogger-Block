@@ -11,8 +11,6 @@ app.include_router(user_registration.router)
 app.include_router(create_post.router)
 app.include_router(friend_requests.router)
 
-# logging.basicConfig(filename='server.log', encoding='utf-8', level=logging.DEBUG)
-
 
 @app.get("/")
 async def root():

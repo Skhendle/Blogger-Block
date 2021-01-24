@@ -22,22 +22,21 @@ class UserFriends:
         return friends
 
 
+    # Uses the 'friends' attribute(from User object). To get 
+    # id of User objects that sent friend requests to 'user'
     def __requests_received(self):
-
         items = []
 
-        # Using the friends attribute(from User object). To get User
-		# objects that sent friend request to 'user'
         for  friend_assoc in self.__user.friends:
 
-            # Getting the friends from the user table
+            # Getting the friend from the user table,  Indexing - primary key
             friend = session.query(User).filter( User.id == friend_assoc.by_id).first()
             a = {
                 'id': str(friend_assoc.by_id),
                 'friend name': str(friend.name),
                 'age': str(friend.age),
                 'gender': str(friend.gender),
-                'request':'rece',
+                'request':'received',
                 'posts': []
             }
 
@@ -62,11 +61,12 @@ class UserFriends:
 
         # Using the request association table, to get User objects
 		# that received friend requests from 'user'.
+        # Indexing - primary key
         receiver = session.query(Requests).filter( Requests.by_id == self.__user.id)
         for friend in receiver:
             a = {
                 'id': str(friend.for_id),
-                'friend name': str(friend.friends.name),
+                'name': str(friend.friends.name),
                 'age': str(friend.friends.age),
                 'gender': str(friend.friends.gender),
                 'request':'sent',
