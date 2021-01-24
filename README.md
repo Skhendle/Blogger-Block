@@ -88,6 +88,7 @@ $ GraphQL_System : deactivate
     "file path": "app.data_models.validator_models.user.py",
 }
 ```
+
 </br>
 
 [x] __Service__ -
