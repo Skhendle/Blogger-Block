@@ -12,4 +12,4 @@ class Requests(Base):
 	for_id = Column(Integer(), ForeignKey("users.id"), primary_key = True ) #id of user being requested
 
 	def __repr__(self):
-		return f"Requests('{self.by_id}','{self.friends}')"
+		return f"Requests('{self.by_id}','{self.friends}')" # pragma: no cover

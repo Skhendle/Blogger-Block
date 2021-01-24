@@ -16,4 +16,4 @@ class Post(Base):
 
 
 	def __repr__(self):
-		return f"Post('{self.heading}','{self.body}')"
+		return f"Post('{self.heading}','{self.body}')" # pragma: no cover

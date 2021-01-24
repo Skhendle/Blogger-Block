@@ -25,4 +25,4 @@ class User(Base):
 	#backref creates the opposite relationship in the other table : many-to-one
 
 	def __repr__(self):
-		return "User('{self.name}','{self.id}')".format(self)
+		return "User('{self.name}','{self.id}')".format(self) # pragma: no cover
