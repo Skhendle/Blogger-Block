@@ -13,12 +13,13 @@ class User(Base):
 	age = Column(String(3))
 	gender = Column(String(20))
 
+
 	#let's establish a one-to-many relationship: one user (parent) can have many friends (children)
 	# Returns a list of rows from request model, that contains id of
 	# current user in the for_id column.
-
 	friends = relationship("Requests", backref = backref("friends") ) 
 	'''creates a pseudo column called 'user' in the Friends table'''
+	
 	
 	#let's establish a one-to-many relationship: one user (parent) can have many posts(children)
 	posts= relationship("Post", backref = backref("post_by"))

@@ -32,6 +32,7 @@ To deactivate virtual enviroment
 $ GraphQL_System : deactivate
 ```
 
+
 ## **Accessing API DOCUMENTATION** <br>
 - {server url}/docs
 - {server url}/redoc
@@ -40,23 +41,31 @@ $ GraphQL_System : deactivate
 ## </br> **API Routes Documentation Format**
 * Describes the documenation structure for routes, how they are accessed, parameters they use, service packages used and the response.</br>
 
+
 ### **Package Layer Name | Layer**
 <blockquote>
+
 
 [x] __API__ - *Provides the URL of the API, states whether it is a POST, GET, DELETE or UPDATE method, provides the library used to build/support page.*
 </br>
 
+
 [x] __Input__ - *Describes the parameters of the __API__.*
 </br>
+
 
 [x] __Services__ - *Specifies the name of the class used by the route and the location of the file containing the route.*
 </br>
 
+
 [x] __Output__ - *Feedback from server, depends on __Input__*</br>
 </blockquote>
+</br>
 
-## **Layered package Architecture**
+
+## **Layered Package Architecture**
 ![Layed package description diagram](/images/Architecture.png)
+
 
 ### <br>*[ 1 ]. Register User | API*
 <blockquote>
@@ -79,7 +88,7 @@ $ GraphQL_System : deactivate
     "file path": "app.data_models.validator_models.user.py",
 }
 ```
-*.</br>
+</br>
 
 [x] __Service__ -
 ```python
@@ -117,7 +126,7 @@ $ GraphQL_System : deactivate
     "file path": "app.data_models.validator_models.user.py",
 }
 ```
-*.</br>
+</br>
 
 [x] __Service__ -
 ```python
@@ -155,7 +164,7 @@ $ GraphQL_System : deactivate
     "file path": "app.data_models.validator_models.post.py",
 }
 ```
-*.</br>
+</br>
 
 [x] __Service__ -
 ```python
@@ -172,9 +181,6 @@ $ GraphQL_System : deactivate
 [x] __Output__ - *Feedback can be viewed in __Service__ class*</br>
 </blockquote>
 
-
-## **Relationships Model**
-![Layed package description diagram](/images/Relationships.png)
 
 ## **Class Diagrams**
 ![Layed package description diagram](/images/ClassDiagram.png)
