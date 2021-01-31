@@ -23,11 +23,10 @@ class CreatePost:
                 )
 
                 session.add(post)
-                try:
-                    session.commit()
-                    return json.dumps({"post_id":post.id , "heading":post.heading,"body":post.body})
-                except Exception as error:
-                    return json.dumps({"message":"post not created"})
+                
+                session.commit()
+                return json.dumps({"post_id":post.id , "heading":post.heading,"body":post.body})
+
         except Exception as error:
             session.rollback()
             return json.dumps({"message":"user does not exist"})
