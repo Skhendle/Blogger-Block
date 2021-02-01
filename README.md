@@ -5,7 +5,7 @@
 This is a backend system that plans to build an API server for  a user blogging platfrom. It will be built with SQLAlchemeny, SQLlite, Redis and graphene. It will have three layers. The storage layer that contains all the system data, service layer that will allow us to implement the system requirements logic and API  layer that will allow external programs to  commincate with the system.
 
 
-## **How To Start She APP** <br>
+## **How To Start The APP** <br>
 ```python
 # Python version: 3.9.0
 "MINGW64 - bash terminal"
