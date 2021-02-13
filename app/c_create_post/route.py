@@ -1,6 +1,9 @@
 from fastapi import APIRouter, Depends
-from app.data_models.validator_models.post import CreatePostModel
-from app.services.create_post import CreatePost
+
+
+from app.c_create_post.input import CreatePostModel
+from app.c_create_post.service import CreatePost
+
 
 router = APIRouter()
 

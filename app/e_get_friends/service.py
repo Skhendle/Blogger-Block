@@ -1,11 +1,6 @@
 import json
 
-from app.data_models.database_models import session
-
-
-from app.data_models.database_models.user import User
-from app.data_models.database_models.requests import Requests
-
+from app.x_data_models.database_models import session, User, Requests
 
 
 class UserFriends:
@@ -16,6 +11,7 @@ class UserFriends:
 
     def get_friends(self):
         friends = []
+        # We can run these two in parallel
         friends.extend(self.__requests_received())
 
         friends.extend(self.__requests_sent())

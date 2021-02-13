@@ -5,7 +5,7 @@ import json
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Hello Welcome To"}
+    assert response.json() == {"message": "The Entire Application"}
 
 
 # Tesing the login function

@@ -1,6 +1,9 @@
 from fastapi import APIRouter, Depends
-from app.data_models.validator_models.friendship_request import FriendRequestModel
-from app.services.friendship_requests import FriendRequest    
+
+from app.d_friendship_requests.input import FriendRequestModel
+
+from app.d_friendship_requests.service import FriendRequest    
+
 
 router = APIRouter()
 

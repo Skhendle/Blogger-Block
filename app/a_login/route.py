@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Depends
-from app.data_models.validator_models.user import UserLoginModel
-from app.services.user_login import UserLogin    
+
+
+from app.a_login.input import UserLoginModel
+from app.a_login.service import UserLogin
 
 router = APIRouter()
 

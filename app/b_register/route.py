@@ -1,8 +1,11 @@
 from fastapi import APIRouter, Depends
-from app.data_models.validator_models.user import UserRegistrationModel
-from app.services.user_registration import UserRegistration    
+
+
+from app.b_register.input import UserRegistrationModel
+from app.b_register.service import UserRegistration    
 
 router = APIRouter()
+
 
 
 @router.post("/user/register", tags=["user"])

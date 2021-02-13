@@ -1,9 +1,12 @@
 import json
 
-from app.data_models.database_models import session
-from app.data_models.validator_models.user import UserLoginModel, UserRegistrationModel
+from app.x_data_models.database_models import session
+from app.x_data_models.database_models.user import User
 
-from app.data_models.database_models.user import User
+
+from app.b_register.input import UserRegistrationModel
+
+
 
 
 class UserRegistration:

@@ -1,8 +1,9 @@
 import json
-from app.data_models.database_models import session
-from app.data_models.validator_models.post import CreatePostModel
-from app.data_models.database_models.post import Post
-from app.data_models.database_models.user import User
+from app.x_data_models.database_models import session, User, Post
+# from app.x_data_models.database_models.post import Post
+# from app.x_data_models.database_models.user import User
+
+from app.c_create_post.input import CreatePostModel
 
 
 class CreatePost:

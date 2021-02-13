@@ -1,14 +1,12 @@
 import json
 
-from app.data_models.database_models import session
+from app.x_data_models.database_models import session, User, Requests
 
 
-from app.data_models.database_models.user import User
-from app.data_models.database_models.requests import Requests
 
-from app.data_models.validator_models.friendship_request import FriendRequestModel
+from app.d_friendship_requests.input import FriendRequestModel
 
-from app.services.get_friends import UserFriends
+from app.e_get_friends.service import UserFriends
 
 class FriendRequest:
 
