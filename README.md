@@ -2,10 +2,10 @@
 [![codecov](https://codecov.io/gh/Skhendle/GraphQL_System/branch/main/graph/badge.svg?token=rSx7WWHUb9)](https://codecov.io/gh/Skhendle/GraphQL_System)
 <br>
 # **GraphQL_System**
-This is a webserver application that plans to build an API server for  a user blogging platform. It will be built with fastApi, SQLAlchemeny, SQLlite, Redis and graphene. It will have three layers. The storage layer that will store\cache all the platform data, service layer that will allow us to implement the system requirements\logic, and API layer that will allow external programs to commincate with the system.
+This is a learning webserver application for a user blogging platform. It will be built with fastApi, SQL-Alchemeny(SQLlite), Redis and graphene. It will have three layers. The storage layer that will store\cache all the platform data, service layer that will allow us to implement the system requirements\logic, and API layer that will allow external programs to commincate with the system.
 
 
-## **How To Start The APP** <br>
+## **Getting Started** <br>
 ```python
 # Python version: 3.9.0
 "MINGW64 - bash terminal"
@@ -40,29 +40,26 @@ $ GraphQL_System : uvicorn app.b_register.main:app --reload
 $ GraphQL_System : deactivate
 ```
 
-
 ## **Accessing API DOCUMENTATION** <br>
 - {server url}/docs
 - {server url}/redoc
 
-
 ## </br> **API Routes Documentation Format**
-* Describes the documenation structure for routes, how they are accessed, parameters they use, service packages used and the response.</br>
-
+* Describes how to setup a package that implements a system requirement  for the application. Specifies the file name, what the file contains and how it is used</br>
 
 ### **Package Layout | For Each System requirements**
 <blockquote>
 
-[x] __Input__ - *Contains parameters the API, will require to execute.*
+[x] __input.py__ - *Contains pyndatic classes, that are used as parameters for API functions and services class.*
 </br>
 
-[x] __Route__ - *Provides the URL of an API, states its Protocol( POST, GET, DELETE or UPDATE) and calls  the service to be executed*
+[x] __route.py__ - *Contains the API function with the url describing its service, states its Protocol( POST, GET, DELETE or UPDATE) and calls for the service to be executed*
 </br>
 
-[x] __Services__ - *Where the logic for a system requirement is executed*
+[x] __service.py__ - *Where the logic for a system requirement is executed*
 </br>
 
-[x] __Main__ - *Allows us to run a service of the application independently*</br>
+[x] __main.py__ - *Allows us to run a service of the entire application independently*</br>
 </blockquote>
 
 ## **Layered Package Architecture**
