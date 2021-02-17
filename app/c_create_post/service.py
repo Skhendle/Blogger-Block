@@ -1,4 +1,4 @@
-from app.x_data_models.database_models import session, User, Post
+from app.x_db_models import session, User, Post
 from app.c_create_post.input import CreatePostModel
 
 

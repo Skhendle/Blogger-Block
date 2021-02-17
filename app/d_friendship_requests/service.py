@@ -1,6 +1,6 @@
 import json
 
-from app.x_data_models.database_models import session, User, Requests
+from app.x_db_models import session, User, Requests
 
 
 

@@ -1,7 +1,6 @@
 import json
 
-from app.x_data_models.database_models import session
-from app.x_data_models.database_models.user import User
+from app.x_db_models import session,User
 
 
 from app.a_register.input import UserRegistrationModel
