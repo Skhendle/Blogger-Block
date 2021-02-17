@@ -40,7 +40,7 @@ $ GraphQL_System : uvicorn app.b_register.main:app --reload
 $ GraphQL_System : deactivate
 ```
 
-## **Accessing API DOCUMENTATION** <br>
+## **Accessing API Documentation** <br>
 - {server url}/docs
 - {server url}/redoc
 
@@ -53,13 +53,13 @@ $ GraphQL_System : deactivate
 [x] __input.py__ - *Contains pyndatic classes, that are used as parameters for API functions and services class.*
 </br>
 
-[x] __route.py__ - *Contains the API function with the url describing its service, states its Protocol( POST, GET, DELETE or UPDATE) and calls for the service to be executed*
+[x] __route.py__ - *Contains the API function with the url describing its service path, states its Protocol( POST, GET, DELETE or UPDATE) and calls for the service to be executed*
 </br>
 
 [x] __service.py__ - *Where the logic for a system requirement is executed*
 </br>
 
-[x] __main.py__ - *Allows us to run a service of the entire application independently*</br>
+[x] __main.py__ - *Allows us to run a service independently independently*</br>
 </blockquote>
 
 ## **Layered Package Architecture**
@@ -69,7 +69,3 @@ $ GraphQL_System : deactivate
 
 ## **Class Diagrams**
 ![Layed package description diagram](/images/ClassDiagram.png)
-
-
-
-

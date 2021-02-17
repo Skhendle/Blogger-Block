@@ -5,11 +5,11 @@ from fastapi import Depends, FastAPI
 
 app = FastAPI()
 
-from app.a_login import route
+from app.a_register import route
 app.include_router(route.router)
 
 
-from app.b_register import route
+from app.b_login import route
 app.include_router(route.router)
 
 
@@ -19,7 +19,6 @@ app.include_router(route.router)
 
 from app.d_friendship_requests import route
 app.include_router(route.router)
-
 
 
 @app.get("/")

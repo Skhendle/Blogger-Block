@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 
 
-from app.b_register.input import UserRegistrationModel
-from app.b_register.service import UserRegistration    
+from app.a_register.input import UserRegistrationModel
+from app.a_register.service import UserRegistration    
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 import json, logging
 from fastapi import Depends, FastAPI
 
-from app.b_register import route
+from app.a_register import route
 
 app = FastAPI()
 

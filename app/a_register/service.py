@@ -4,7 +4,7 @@ from app.x_data_models.database_models import session
 from app.x_data_models.database_models.user import User
 
 
-from app.b_register.input import UserRegistrationModel
+from app.a_register.input import UserRegistrationModel
 
 
 
@@ -28,10 +28,8 @@ class UserRegistration:
         session.add(user)
         try:
             session.commit()
-            return json.dumps({"user_id":user.id ,"message":"Successful user registration"})
+            return {"user_id":user.id ,"message":"Successful user registration"}
         except Exception as error:
             session.rollback()
-            # Used to handle the registration of a user that is already in the database
-            # print(error)
-            return json.dumps({"message":"Invalid user registration"})
+            return {"message":"Invalid user registration"}
 
