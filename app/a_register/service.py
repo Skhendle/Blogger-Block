@@ -1,11 +1,7 @@
 import json
 
 from app.x_db_models import session,User
-
-
 from app.a_register.input import UserRegistrationModel
-
-
 
 
 class UserRegistration:
@@ -27,7 +23,7 @@ class UserRegistration:
         session.add(user)
         try:
             session.commit()
-            return {"user_id":user.id ,"message":"Successful user registration"}
+            return {"user_id":user.id, "message":"Successful user registration"}
         except Exception as error:
             session.rollback()
             return {"message":"Invalid user registration"}
