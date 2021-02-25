@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/Skhendle/Blogger-Block-.svg?branch=main)](https://travis-ci.org/Skhendle/Blogger-Block-)
-[![codecov](https://codecov.io/gh/Skhendle/GraphQL_System/branch/main/graph/badge.svg?token=rSx7WWHUb9)](https://codecov.io/gh/Skhendle/GraphQL_System)
+[![Build Status](https://travis-ci.org/Skhendle/Blogger-Block.svg?branch=main)](https://travis-ci.org/Skhendle/Blogger-Block)
+[![codecov](https://codecov.io/gh/Skhendle/Blogger-Block/branch/main/graph/badge.svg?token=rSx7WWHUb9)](https://codecov.io/gh/Skhendle/Blogger-Block)
 <br>
 # **Blogger-Block**
 This is a learning webserver application for a user blogging platform. It will be built with fastApi, SQL-Alchemeny(SQLlite), Redis and graphene. It will have three layers. The storage layer that will store\cache all the platform data, service layer that will allow us to implement the system requirements\logic, and API layer that will allow external programs to commincate with the system.
