@@ -15,8 +15,8 @@ from app.x_db_models.requests import Requests
 # can have a better representation of our relationships
 
 
-engine = create_engine('sqlite:///:memory:', echo=False)
-# engine = create_engine('sqlite:///test_db.db', echo=False)
+# engine = create_engine('sqlite:///:memory:', echo=False)
+engine = create_engine('sqlite:///test_db.db', echo=False)
 
 Base.metadata.create_all(bind=engine)
 
