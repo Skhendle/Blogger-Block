@@ -21,10 +21,10 @@ class UserRegistration:
             )
         
         session.add(user)
+        
         try:
             session.commit()
-            return {"user_id":user.id, "message":"Successful user registration"}
+            return {"status": "pass", "message":"Successful registration"}
         except Exception as error:
             session.rollback()
-            return {"message":"Invalid user registration"}
-
+            return {"status": "fail", "message":"Invalid Registration"}
