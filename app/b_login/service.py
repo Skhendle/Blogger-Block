@@ -29,18 +29,11 @@ class UserLogin:
         
 
         response = {}
+        response['status'] = "pass"
         response['id'] = user.id
         response['name'] = user.name 
-        response['age'] = user.age
+        response['age'] = int(user.age)
         response['gender'] = user.gender
 
-        response['posts'] = []
-        for post in user.posts:
-            response['posts'].append({
-                'id': post.id,
-                'heading':post.heading,
-                'body':post.body
-            })
 
-        response['friends'] = UserFriends(user=user).get_friends()
         return response
