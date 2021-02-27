@@ -30,8 +30,8 @@ class UserLogin:
 
         response = {}
         response['status'] = "pass"
-        response['id'] = user.id
-        response['name'] = user.name 
+        response['id'] = int(user.id)
+        response['username'] = user.name 
         response['age'] = int(user.age)
         response['gender'] = user.gender
 

@@ -14,8 +14,14 @@ def test_user_login_pass():
     )
 
     assert response.status_code == 200
-    # TODO: test json response returned
+    data = {}
+    data['status'] = "pass"
+    data['id'] = 3
+    data['username'] = "Antony" 
+    data['age'] = 25
+    data['gender'] = "male"
 
+    assert response.json() == data
 
 # Testing if a user with invalid credentials
 # fails to login successfully
