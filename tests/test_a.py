@@ -23,7 +23,7 @@ def test_user_registration_pass1():
     )
 
     assert response.status_code == 200
-    assert response.json() == {"user_id": 1, "message": "Successful user registration"}
+    assert response.json() == {"status": "pass", "message":"Successful registration"}
     
 
     response = client.post(
@@ -37,7 +37,7 @@ def test_user_registration_pass1():
     )
     
     assert response.status_code == 200
-    assert response.json() == {"user_id": 2, "message": "Successful user registration"}
+    assert response.json() == {"status": "pass", "message":"Successful registration"}
     
 
     response = client.post(
@@ -51,7 +51,7 @@ def test_user_registration_pass1():
     )
 
     assert response.status_code == 200
-    assert response.json() == {"user_id": 3, "message": "Successful user registration"}
+    assert response.json() == {"status": "pass", "message":"Successful registration"}
     
 
 # Testing user regitration with invalid details
@@ -69,6 +69,6 @@ def test_user_registration_fail():
     )
 
     assert response.status_code == 200
-    assert response.json() == {"message": "Invalid user registration"}
+    assert response.json() == {"status": "fail", "message":"Invalid Registration"}
 
     # Registering with invalid input paramaters
