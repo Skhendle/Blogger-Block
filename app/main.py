@@ -20,6 +20,8 @@ app.include_router(route.router)
 from app.d_friendship_requests import route
 app.include_router(route.router)
 
+from app.e_get_friends import route
+app.include_router(route.router)
 
 @app.get("/")
 async def root():

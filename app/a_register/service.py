@@ -1,9 +1,9 @@
 import json
-
-from app.x_db_models import session,User
+import sqlite3
 from app.a_register.input import UserRegistrationModel
 
 
+from app.x_db_models import session, User
 class UserRegistration:
 
     # inputs is validator type

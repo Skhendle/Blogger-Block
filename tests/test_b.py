@@ -16,6 +16,7 @@ def test_user_login_pass():
     assert response.status_code == 200
     data = {}
     data['status'] = "pass"
+    data['message'] =  "Successful Login"
     data['id'] = 3
     data['username'] = "Antony" 
     data['age'] = 25

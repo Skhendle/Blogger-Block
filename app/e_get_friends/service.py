@@ -4,8 +4,10 @@ from app.x_db_models import session, User, Requests
 class UserFriends:
 
     # inputs is validator type
-    def __init__(self, user: User):
-        self.__user = user
+    def __init__(self, user_id: int):
+        self.__user = session.query(User).filter_by(
+            id = user_id,
+        ).first()
 
     def get_friends(self):
         friends = []
