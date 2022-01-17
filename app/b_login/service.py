@@ -22,10 +22,10 @@ class UserLogin:
         ).first()
 
         if user == None:
-            return {'status':'failed','message':'Invalid Login'}
+            return {"status":"failed","message":"Invalid Login"}
         
         if user.password != self.__inputs.password:
-            return {'status':'failed','message':'Invalid Login'}
+           return {"status":"failed","message":"Invalid Login"}
         
 
         response = {}

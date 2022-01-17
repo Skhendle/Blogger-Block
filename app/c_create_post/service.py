@@ -24,4 +24,4 @@ class CreatePost:
 
         except Exception as error:
             session.rollback()
-            return {'status':'failed', 'message': 'invalid post creation'}
+            return {"status":"failed", "message": "invalid post creation"}

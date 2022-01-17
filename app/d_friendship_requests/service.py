@@ -25,15 +25,15 @@ class FriendRequest:
 
             try: 
                 session.commit()
-                return "friendship successfully created"
+                return {"status": "pass", "message":"Freindship Successfully Created"}
                 
             except Exception as error:
                 # Executes  when user.by_id, has relation with user.for_id
  
                 session.rollback()
-                return "friend request failed"
+                return {"status": "fail", "message":"Freind Request Failed"}
 
-        return "friend request failed"
+        return {"status": "fail", "message":"Freind Request Failed"}
 
 
     def __check_if_relationship_exist(self):
