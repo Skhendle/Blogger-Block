@@ -31,7 +31,7 @@ def  test_friendship_request_pass():
     )
 
     assert response.status_code == 200
-    assert response.json() == "friendship successfully created"
+    assert response.json() == {"status": "pass", "message":"Freindship Request Successful"}
 
 
 def  test_friendship_request_fail():
@@ -46,7 +46,7 @@ def  test_friendship_request_fail():
     )
 
     assert response.status_code == 200
-    assert( response.json() == "friend request failed")
+    assert response.json() == {"status": "fail", "message":"Freindship Request Invalid"}
 
     # creating an inverted request,
     # for association in table.
@@ -60,4 +60,4 @@ def  test_friendship_request_fail():
     )
 
     assert response.status_code == 200
-    assert( response.json() == "friend request failed")
+    assert response.json() == {"status": "fail", "message":"Freindship Request Invalid"}
