@@ -16,6 +16,7 @@ class UserRegistration:
         user = User(
                 name=self.__inputs.username, 
                 password=self.__inputs.password, 
+
                 age=self.__inputs.age, 
                 gender=self.__inputs.gender
             )
