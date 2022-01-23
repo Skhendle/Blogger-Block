@@ -1,3 +1,4 @@
+import imp
 from app.x_db_models import session, User
 
 from app.b_login.input import UserLoginModel
@@ -5,6 +6,7 @@ from app.b_login.input import UserLoginModel
 # 
 from app.e_get_friends.service import UserFriends
 
+from fastapi import HTTPException
 
 class UserLogin:
 
@@ -22,10 +24,10 @@ class UserLogin:
         ).first()
 
         if user == None:
-            return {"status":"failed","message":"Invalid Login"}
+            return HTTPException(status_code=401, detail="Invalid Login")
         
         if user.password != self.__inputs.password:
-           return {"status":"failed","message":"Invalid Login"}
+           return HTTPException(status_code=401, detail="Invalid Login")
         
 
         response = {}
