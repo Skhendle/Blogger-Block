@@ -24,11 +24,11 @@ class UserLogin:
         ).first()
 
         if user == None:
-            return HTTPException(status_code=401, detail="Invalid Login")
+            raise HTTPException(status_code=401, detail="Invalid Login")
         
         if user.password != self.__inputs.password:
-           return HTTPException(status_code=401, detail="Invalid Login")
-        
+           raise HTTPException(status_code=401, detail="Invalid Login")
+       
 
         response = {}
         response['status'] = "pass"
