@@ -1,4 +1,7 @@
-import json
+import imp
+from fastapi.responses import JSonResponse
+
+from fastapi import HTTPException
 
 from app.x_db_models import session, User, Requests
 
@@ -25,15 +28,15 @@ class FriendRequest:
 
             try: 
                 session.commit()
-                return {"status": "pass", "message":"Freindship Successfully Created"}
+                return JSonResponse(status_code=201, content={"message":"Freindship Successfully Created"})
                 
             except Exception as error:
                 # Executes  when user.by_id, has relation with user.for_id
  
                 session.rollback()
-                return {"status": "fail", "message":"Freind Request Failed"}
+                return HTTPException(status_code=401, detail="Freind Request Failed")
 
-        return {"status": "fail", "message":"Freind Request Failed"}
+        return  HTTPException(status_code=401, detail="Freind Request Failed") 
 
 
     def __check_if_relationship_exist(self):
