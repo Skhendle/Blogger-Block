@@ -1,7 +1,8 @@
 import json
 import sqlite3
 from app.a_register.input import UserRegistrationModel
-
+from fastapi.responses import JSonResponse
+from fastapi import HTTPException
 
 from app.x_db_models import session, User
 class UserRegistration:
@@ -25,7 +26,7 @@ class UserRegistration:
         
         try:
             session.commit()
-            return {"status": "pass", "message":"Successful registration"}
+            return JSonResponse(status_code=201, content={"message":"Successful registration"})
         except Exception as error:
             session.rollback()
-            return {"status": "fail", "message":"Invalid Registration"}
+            return HTTPException(status_code=401, detail="Invalid Registration")
