@@ -29,4 +29,4 @@ class UserRegistration:
             return JSonResponse(status_code=201, content={"message":"Successful registration"})
         except Exception as error:
             session.rollback()
-            return HTTPException(status_code=401, detail="Invalid Registration")
+            raise HTTPException(status_code=401, detail="Invalid Registration")
