@@ -26,4 +26,4 @@ class CreatePost:
 
         except Exception as error:
             session.rollback()
-            return HTTPException(status_code= 401, detail ="invalid post creation")
+            raise HTTPException(status_code= 401, detail ="invalid post creation")

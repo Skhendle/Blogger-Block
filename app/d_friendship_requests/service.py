@@ -34,9 +34,9 @@ class FriendRequest:
                 # Executes  when user.by_id, has relation with user.for_id
  
                 session.rollback()
-                return HTTPException(status_code=401, detail="Freind Request Failed")
+                raise HTTPException(status_code=401, detail="Freind Request Failed")
 
-        return  HTTPException(status_code=401, detail="Freind Request Failed") 
+        raise  HTTPException(status_code=401, detail="Freind Request Failed") 
 
 
     def __check_if_relationship_exist(self):
