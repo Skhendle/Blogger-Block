@@ -14,7 +14,7 @@ from app.db_models.requests import Requests
 # We are using ORM from sqlalchemy so that we 
 # can have a better representation of our relationships
 
-engine = create_engine('sqlite:///:memory:', echo=False)
+# engine = create_engine('sqlite:///:memory:', echo=False)
 
 engine = create_engine('sqlite:///test_db.db', echo=False)
 

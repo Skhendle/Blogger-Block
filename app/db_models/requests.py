@@ -7,9 +7,8 @@ from . import Base
 
 class Requests(Base):
 	__tablename__ = 'requests'
-
 	by_id= Column(Integer(), primary_key = True) #id of user requesting
 	for_id = Column(Integer(), ForeignKey("users.id"), primary_key = True ) #id of user being requested
-
+	status = Column(String(20)) # e.g: Pending, Approved, Rejected
 	def __repr__(self):
 		return f"Requests('{self.by_id}','{self.friends}')" # pragma: no cover
