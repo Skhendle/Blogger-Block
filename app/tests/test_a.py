@@ -4,7 +4,7 @@ import json
 # Testing the main page
 def test_read_main():
     response = client.get("/")
-    assert response.status_code == 200
+    print(response.json())
     assert response.json() == {"message": "The Entire Application"}
 
 
@@ -22,8 +22,8 @@ def test_user_registration_pass1():
         }
     )
 
-    assert response.status_code == 200
-    assert response.json() == {"status": "pass", "message":"Successful registration"}
+    assert response.status_code == 201
+    assert response.json() == {"message":"Successful Registration"}
     
 
     response = client.post(
@@ -36,8 +36,8 @@ def test_user_registration_pass1():
         }
     )
     
-    assert response.status_code == 200
-    assert response.json() == {"status": "pass", "message":"Successful registration"}
+    assert response.status_code == 201
+    assert response.json() == {"message":"Successful Registration"}
     
 
     response = client.post(
@@ -50,8 +50,8 @@ def test_user_registration_pass1():
         }
     )
 
-    assert response.status_code == 200
-    assert response.json() == {"status": "pass", "message":"Successful registration"}
+    assert response.status_code == 201
+    assert response.json() == {'message':'Successful Registration'}
     
 
 # Testing user regitration with invalid details
@@ -68,7 +68,7 @@ def test_user_registration_fail():
         }
     )
 
-    assert response.status_code == 200
-    assert response.json() == {"status": "fail", "message":"Invalid Registration"}
+    assert response.status_code == 401
+    assert response.json()['detail'] == 'Invalid Registration'
 
     # Registering with invalid input paramaters

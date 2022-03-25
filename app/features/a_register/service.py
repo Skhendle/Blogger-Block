@@ -26,7 +26,7 @@ class UserRegistration:
         
         try:
             session.commit()
-            return JSONResponse(status_code=201, content={"message":"Successful Registration"})
+            return JSONResponse(status_code=201, content={'message':'Successful Registration'})
         except Exception as error:
             session.rollback()
-            raise HTTPException(status_code=401, detail="Invalid Registration")
+            raise HTTPException(status_code=401, detail='Invalid Registration')
