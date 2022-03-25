@@ -9,8 +9,8 @@ from app.features.a_register import route
 app.include_router(route.router)
 
 
-# from app.features.b_login import route
-# app.include_router(route.router)
+from app.features.b_login import route
+app.include_router(route.router)
 
 
 # from app.features.c_create_post import route
