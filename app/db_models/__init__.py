@@ -7,9 +7,9 @@ from sqlalchemy.orm import sessionmaker, relationship, backref
 Base = declarative_base()
 
 # XXX: Development imports
-from app.x_db_models.user import User
-from app.x_db_models.post import Post
-from app.x_db_models.requests import Requests
+from app.db_models.user import User
+from app.db_models.post import Post
+from app.db_models.requests import Requests
 
 # We are using ORM from sqlalchemy so that we 
 # can have a better representation of our relationships

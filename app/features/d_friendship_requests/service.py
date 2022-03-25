@@ -3,13 +3,13 @@ from fastapi.responses import JSonResponse
 
 from fastapi import HTTPException
 
-from app.x_db_models import session, User, Requests
+from app.db_models import session, User, Requests
 
 
 
-from app.d_friendship_requests.input import FriendRequestModel
+from app.features.d_friendship_requests.input import FriendRequestModel
 
-from app.e_get_friends.service import UserFriends
+from app.features.e_get_friends.service import UserFriends
 
 class FriendRequest:
 

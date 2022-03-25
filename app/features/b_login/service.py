@@ -1,10 +1,10 @@
 import imp
-from app.x_db_models import session, User
+from app.db_models import session, User
 
-from app.b_login.input import UserLoginModel
+from app.features.b_login.input import UserLoginModel
 
 # 
-from app.e_get_friends.service import UserFriends
+from app.features.e_get_friends.service import UserFriends
 
 from fastapi import HTTPException
 

@@ -5,22 +5,22 @@ from fastapi import Depends, FastAPI
 
 app = FastAPI()
 
-from app.a_register import route
+from app.features.a_register import route
 app.include_router(route.router)
 
 
-from app.b_login import route
+from app.features.b_login import route
 app.include_router(route.router)
 
 
-from app.c_create_post import route
+from app.features.c_create_post import route
 app.include_router(route.router)
 
 
-from app.d_friendship_requests import route
+from app.features.d_friendship_requests import route
 app.include_router(route.router)
 
-from app.e_get_friends import route
+from app.features.e_get_friends import route
 app.include_router(route.router)
 
 @app.get("/")

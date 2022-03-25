@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 
 
-from app.c_create_post.input import CreatePostModel
-from app.c_create_post.service import CreatePost
+from app.features.c_create_post.input import CreatePostModel
+from app.features.c_create_post.service import CreatePost
 
 
 router = APIRouter()

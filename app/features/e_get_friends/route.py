@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 
 
-from app.e_get_friends.service import UserFriends
+from app.features.e_get_friends.service import UserFriends
 
 router = APIRouter()
 

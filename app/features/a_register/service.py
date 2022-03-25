@@ -1,10 +1,10 @@
 import json
 import sqlite3
-from app.a_register.input import UserRegistrationModel
+from app.features.a_register.input import UserRegistrationModel
 from fastapi.responses import JSonResponse
 from fastapi import HTTPException
 
-from app.x_db_models import session, User
+from app.db_models import session, User
 class UserRegistration:
 
     # inputs is validator type

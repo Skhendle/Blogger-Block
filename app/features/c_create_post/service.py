@@ -1,6 +1,6 @@
 import imp
-from app.x_db_models import session, User, Post
-from app.c_create_post.input import CreatePostModel
+from app.db_models import session, User, Post
+from app.features.c_create_post.input import CreatePostModel
 from fastapi.responses import JSONResponse
 from fastapi import HTTPException
 
@@ -12,7 +12,7 @@ class CreatePost:
     def create_post(self):
         # check if the user exists
         try:
-            user = Userfilter_by(id = self.__inputs.user_id).one()
+            user = User.filter_by(id = self.__inputs.user_id).one()
             if user :
                 post = Post(
                     user_id=self.__inputs.user_id,
