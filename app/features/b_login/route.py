@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 
 
-from app.b_login.input import UserLoginModel
-from app.b_login.service import UserLogin
+from app.features.b_login.input import UserLoginModel
+from app.features.b_login.service import UserLogin
 
 router = APIRouter()
 

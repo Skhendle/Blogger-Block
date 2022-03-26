@@ -11,7 +11,7 @@ def test_create_post_pass():
         }
     )
 
-    assert response.status_code == 200
+    assert response.status_code == 201
     assert response.json() == {"post_id":1 , "heading": "Peter","body": "Hello, I'm Peter."}
 
     response = client.post(
@@ -22,7 +22,7 @@ def test_create_post_pass():
             "body": "Hello, I'm John"
         }
     )
-    assert response.status_code == 200
+    assert response.status_code == 201
     assert response.json() == {"post_id":2 , "heading": "John","body": "Hello, I'm John"}
 
 
@@ -34,7 +34,7 @@ def test_create_post_pass():
             "body": "Hello, I'm Antony"
         }
     )
-    assert response.status_code == 200
+    assert response.status_code == 201
     assert response.json() == {"post_id":3 , "heading": "Antony","body": "Hello, I'm Antony"}
 
 
@@ -52,5 +52,5 @@ def test_create_post_fail():
         }
     )
 
-    assert response.status_code == 200
-    assert response.json() == {'status':'failed', 'message': 'invalid post creation'}
+    assert response.status_code == 401
+    assert response.json()['detail'] == 'Invalid Post Creation'

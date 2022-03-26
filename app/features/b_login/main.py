@@ -1,12 +1,14 @@
 import json, logging
 from fastapi import Depends, FastAPI
 
-from app.d_friendship_requests import route
+from app.features.b_login import route
 
 app = FastAPI()
 
+
 app.include_router(route.router)
+
 
 @app.get("/")
 async def root():
-    return {"message": "This is the create post service"}
+    return {"message": "This is the login service"}

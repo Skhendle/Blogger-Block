@@ -1,4 +1,4 @@
-from app.x_db_models import session, User, Requests
+from app.db_models import session, User, Requests
 
 
 class UserFriends:

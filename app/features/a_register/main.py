@@ -1,7 +1,7 @@
 import json, logging
 from fastapi import Depends, FastAPI
 
-from app.a_register import route
+from app.features.a_register import route
 
 app = FastAPI()
 
