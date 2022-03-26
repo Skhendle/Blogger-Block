@@ -1,5 +1,5 @@
 import imp
-from fastapi.responses import JSonResponse
+from fastapi.responses import JSONResponse
 
 from fastapi import HTTPException
 
@@ -19,36 +19,40 @@ class FriendRequest:
 
     def create_friendship(self):
 
-        if self.__check_if_relationship_exist() == False:
+        if self._check_if_relationship_exist() == False:
 
             relation = Requests( by_id = self.__request.by_id, 
-                for_id = self.__request.for_id)
-
+                for_id = self.__request.for_id, status= "Pending")
             session.add(relation)
-
             try: 
                 session.commit()
-                return JSonResponse(status_code=201, content={"message":"Freindship Successfully Created"})
-                
+                session.close()
+                return JSONResponse(status_code=201, content={'message':'Freindship Request Sent'})
             except Exception as error:
-                # Executes  when user.by_id, has relation with user.for_id
- 
                 session.rollback()
-                raise HTTPException(status_code=401, detail="Freind Request Failed")
+                session.close()
+                raise HTTPException(status_code=401, detail='Invalid Request, Please Try Again')
 
-        raise  HTTPException(status_code=401, detail="Freind Request Failed") 
+        # Executes  when user.by_id, has relation with user.for_id
+        raise  HTTPException(status_code=401, detail='Freind Request Already Sent') 
 
 
-    def __check_if_relationship_exist(self):
+    def _check_if_relationship_exist(self):
         # checks if there is no request between users
         # initiated by user.for_id.
 
-        relation = session.query(Requests).filter( 
+        relation_one = session.query(Requests).filter( 
             Requests.by_id == self.__request.for_id,
             Requests.for_id == self.__request.by_id
-            ).first()
+        ).first()
 
-        if relation is None:
+        relation_two = session.query(Requests).filter( 
+            Requests.by_id == self.__request.by_id,
+            Requests.for_id == self.__request.for_id
+        ).first()
+
+
+        if relation_one == relation_two == None:
             return False
         
         return True

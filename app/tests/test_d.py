@@ -12,6 +12,9 @@ def  test_friendship_request_pass():
         }
     )
 
+    assert response.status_code == 201
+    assert response.json() == {"message": "Freindship Request Sent"}
+
     # Peter -> Antony
     response = client.post(
         "/user/requests",
@@ -20,6 +23,9 @@ def  test_friendship_request_pass():
             "for_id": 3,
         }
     )
+    assert response.status_code == 201
+    assert response.json() == {"message": "Freindship Request Sent"}
+
 
     # Antony -> John
     response = client.post(
@@ -30,8 +36,8 @@ def  test_friendship_request_pass():
         }
     )
 
-    assert response.status_code == 200
-    assert response.json() == {"status": "pass", "message":"Freindship Request Successful"}
+    assert response.status_code == 201
+    assert response.json() == {"message": "Freindship Request Sent"}
 
 
 def  test_friendship_request_fail():
@@ -45,8 +51,8 @@ def  test_friendship_request_fail():
         }
     )
 
-    assert response.status_code == 200
-    assert response.json() == {"status": "fail", "message":"Freindship Request Invalid"}
+    assert response.status_code == 401
+    assert response.json()['detail'] == 'Freind Request Already Sent'
 
     # creating an inverted request,
     # for association in table.
@@ -58,6 +64,5 @@ def  test_friendship_request_fail():
             "for_id": 1,
         }
     )
-
-    assert response.status_code == 200
-    assert response.json() == {"status": "fail", "message":"Freindship Request Invalid"}
+    assert response.status_code == 401
+    assert response.json()['detail'] == 'Freind Request Already Sent'
