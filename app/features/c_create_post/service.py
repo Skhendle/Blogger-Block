@@ -7,17 +7,17 @@ from fastapi import HTTPException
 class CreatePost:
 
     def __init__(self, inputs: CreatePostModel):
-        self.__inputs = inputs
+        self._inputs = inputs
 
     def create_post(self):
         # check if the user exists
         try:
-            user = User.filter_by(id = self.__inputs.user_id).one()
+            user = session.query(User).filter_by(id = self._inputs.user_id).one()
             if user :
                 post = Post(
-                    user_id=self.__inputs.user_id,
-                    heading=self.__inputs.heading,
-                    body=self.__inputs.body
+                    user_id=self._inputs.user_id,
+                    heading=self._inputs.heading,
+                    body=self._inputs.body
                 )
 
                 session.add(post)
@@ -26,4 +26,4 @@ class CreatePost:
 
         except Exception as error:
             session.rollback()
-            raise HTTPException(status_code= 401, detail ="invalid post creation")
+            raise HTTPException(status_code= 401, detail ='Invalid Post Creation')
